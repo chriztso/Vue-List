@@ -1,13 +1,18 @@
 <template>
   <div class="whole">
     <div>
-      Chris's List
+      {{message}}
     </div>
-    <ol> 
-      <li v-for="todo in todos"> 
-        {{todo.text}}
-      </li>
-    </ol>  
+    <div>
+      <button v-on:click = "reverseMessage">Reverse</button>
+    </div>  
+    <div>
+      <ol> 
+        <li v-for="todo in todos"> 
+          {{todo.text}}
+        </li>
+      </ol>  
+    </div>
   </div>
 </template>
 
@@ -15,14 +20,19 @@
 export default {
   data() {
     return {
-      message: 'Hello World', 
+      message: "Chris's List", 
       todos : [
           {text : 'Eat dinner'},
           {text : 'Buy books'}, 
           {text : 'Go to class'}
       ]
     }
-  }, 
+  },
+  methods: {
+    reverseMessage: function () {
+      this.message = this.message.split('').reverse().join('')
+    }
+  },
 };
 </script>
 
@@ -30,7 +40,7 @@ export default {
 <style>
 .whole{
     display: flex;
-    flex-direction: column,;
+    flex-direction: column;
     border: 1px solid black;
     padding-left: 600px;
 }

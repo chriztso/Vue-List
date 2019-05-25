@@ -13,6 +13,11 @@
         </li>
       </ol>  
     </div>
+    <div>
+      <input v-model="messageOne" placeholder="type something">
+      <p> Message is: {{messageOne}}</p>
+    </div>
+
   </div>
 </template>
 
@@ -20,6 +25,7 @@
 export default {
   data() {
     return {
+      messageOne: '',
       message: "Chris's List", 
       todos : [
           {text : 'Eat dinner'},

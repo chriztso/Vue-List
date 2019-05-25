@@ -17,7 +17,16 @@
       <input v-model="messageOne" placeholder="type something">
       <p> Message is: {{messageOne}}</p>
     </div>
-
+    <div>
+      <input type="checkbox" id="Homework1" value="Homework1" v-model="homework">
+      <label for="Homework1">Homework1</label>
+      <input type="checkbox" id="Homework2" value="Homework2" v-model="homework">
+      <label for="Homework2">Homework2</label>
+      <input type="checkbox" id="Homework3" value="Homework3" v-model="homework">
+      <label for="Homework3">Homework3</label>
+      <br>
+      <span> Homework complete: {{homework}} </span>
+    </div> 
   </div>
 </template>
 
@@ -25,6 +34,7 @@
 export default {
   data() {
     return {
+      homework: [],
       messageOne: '',
       message: "Chris's List", 
       todos : [
